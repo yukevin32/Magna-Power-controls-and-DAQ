@@ -6,14 +6,14 @@ import pandas as pd  # Import pandas for Excel export
 # --- Configuration for Magna-Power TS Series ---
 # Serial port settings
 SERIAL_PORT = 'COM4'
-BAUDRATE = 115200
+BAUDRATE = 19200
 
 # Measurement settings
 MEASUREMENT_INTERVAL_SECONDS = 60  # 1 minute
 TOTAL_MEASUREMENTS = 5  # Take 5 measurements (5 minutes total running time)
 SET_CURRENT = 5.0  # The constant current to source (Constant Current mode)
 SET_VOLTAGE = 10.0  # The maximum compliance voltage allowed (safeguard)
-EXCEL_FILENAME = 'TS_Power_Supply_Log.xlsx'
+EXCEL_FILENAME = 'Magna test.xlsx' # Set file name <filename>.xlsx
 
 # --- Data Storage ---
 # Lists to store the measurement data (elapsed_times now stores HOURS)
