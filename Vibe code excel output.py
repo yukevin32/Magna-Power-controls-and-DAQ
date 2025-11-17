@@ -1,7 +1,7 @@
-import serial
-import time
-import datetime as dt
-import openpyxl
+import serial # for serial port access
+import time # time logging
+import datetime as dt # probably not needed, date stored in file name
+import openpyxl # Excel creation
 import pandas as pd  # Import pandas for Excel export
 
 # --- Configuration for Magna-Power TS Series ---
