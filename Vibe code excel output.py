@@ -1,6 +1,7 @@
 import serial
 import time
 import datetime as dt
+import openpyxl
 import pandas as pd  # Import pandas for Excel export
 
 # --- Configuration for Magna-Power TS Series ---
@@ -9,11 +10,11 @@ SERIAL_PORT = 'COM4'
 BAUDRATE = 19200
 
 # Measurement settings
-MEASUREMENT_INTERVAL_SECONDS = 60  # 1 minute
-TOTAL_MEASUREMENTS = 5  # Take 5 measurements (5 minutes total running time)
+MEASUREMENT_INTERVAL_SECONDS = 5  # Set measurement interval in seconds
+TOTAL_MEASUREMENTS = 5  # set number of measurements (multiply measurement interval by total measurements to get total running time)
 SET_CURRENT = 5.0  # The constant current to source (Constant Current mode)
-SET_VOLTAGE = 10.0  # The maximum compliance voltage allowed (safeguard)
-EXCEL_FILENAME = 'Magna test.xlsx' # Set file name <filename>.xlsx
+SET_VOLTAGE = 9.0  # The maximum compliance voltage allowed (safeguard)
+EXCEL_FILENAME = r'C:\Users\kevin\OneDrive\Desktop\saratoga energy\Magna Power\magnatest1.xlsx' # Set file name & location <filename>.xlsx
 
 # --- Data Storage ---
 # Lists to store the measurement data (elapsed_times now stores HOURS)
@@ -49,7 +50,7 @@ try:
     # 1. Create serial connection object
     conn = serial.Serial(port=SERIAL_PORT, baudrate=BAUDRATE, timeout=5)
 
-    # Add a 5-second start delay
+    # Add a start delay in seconds
     time.sleep(5)
 
     # 2. Identify the product
